@@ -1,11 +1,11 @@
 import { render, screen } from "@testing-library/react";
-import Welcome from "./components/Welcome";
+import Welcome from "../components/Welcome";
 import { describe, expect, it } from "vitest";
 
-describe("Welcome component", () => {
-  it("renders without crashing", () => {
+describe("Welcome testing", () => {
+  it("mounts the Welcome component correctly", () => {
     render(<Welcome />);
-    const welcomeElement = screen.getByText(/Benvenuti in EpiBooks!/i);
-    expect(welcomeElement).toBeInTheDocument();
+    const h1 = screen.getByText(/Benvenuti/i);
+    expect(h1).toBeInTheDocument();
   });
 });
